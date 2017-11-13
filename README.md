@@ -28,4 +28,4 @@ Please do add this mod to your modpack! I only ask you let me know on Twitter:
 
 ![](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)  
 Bark Books is licensed under the [Creative Commons BY-SA-NC 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
-Copyright (C) 2017 Jeremy Grozavescu <oneandonlyflexo>
+Copyright (C) 2017 Jeremy Grozavescu \<oneandonlyflexo>
