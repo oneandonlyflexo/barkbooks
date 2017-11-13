@@ -9,12 +9,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import one.flexo.barkbooks.ModInfo;
 import one.flexo.barkbooks.util.IModelRegister;
 import one.flexo.barkbooks.util.ModIdType;
-import vazkii.botania.common.core.BotaniaCreativeTab;
 
 public abstract class ItemBase extends Item implements IModelRegister {
 
 	public ItemBase(String name) {
-		setCreativeTab(BotaniaCreativeTab.INSTANCE);
+		//TODO: Use nibbler creative tab
 		setRegistryName(new ResourceLocation(ModInfo.modid, name));
 		setUnlocalizedName(ModIdType.DEFAULT.getId(name));
 	}
