@@ -1,0 +1,40 @@
+# git
+/.git/
+
+# java
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# minecraft instance
+/run
+
+# eclipse
+/eclipse
+/bin
+/.settings
+/.metadata
+/.classpath
+/.project
+
+# idea
+/out
+/*.ipr
+/*.iws
+/*.iml
+/.idea
+
+# gradle
+/build
+/.gradle/
+
+
+### OSX (adds a lot of garbage)###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+#special ;)
+JUSTFORME.txt

@@ -1,0 +1,125 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+        	name = "forge"
+        	url = "http://files.minecraftforge.net/maven" }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+//Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
+
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+
+//configs
+ext.configFile = file "build.properties"
+configFile.withReader {
+    def prop = new Properties()
+    prop.load(it)
+    project.ext.config = new ConfigSlurper().parse prop
+}
+
+
+group = "${config.mod_group}"
+archivesBaseName = "${config.modid}"
+version = "${config.minecraft_version}-${config.mod_version}"
+
+sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+}
+
+minecraft {
+    version = config.minecraft_version + "-" + config.forge_version
+    runDir = "run"
+    
+    useDepAts = true
+    
+    mappings = "${config.mapping_version}"
+    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+    
+    replace '/*${gradle.mod_version}*/', '"' + config.mod_version + '";//'
+    replaceIn "ModInfo.java"
+	
+}
+
+dependencies {
+
+    compile files(
+
+    )
+
+}
+
+def commonManifest = {
+    attributes 'FMLAT': "${config.mod}_at.cfg"
+}
+
+processResources {
+    // this will ensure that this task is redone when the versions change.
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include '**/*.info'
+        include '**/*.properties'
+
+        // replaces
+        expand ([
+        	'version': project.version,
+        	'mcversion': project.minecraft.version,
+            'modid': project.config.modid,
+            'mod_version': project.config.mod_version,
+            'minecraft_version': project.config.minecraft_version,
+            'description': project.config.mod_description
+        ])
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude '**/*.info'
+        exclude '**/*.properties'
+    }
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    from (sourceSets.main.output) {
+        include 'LICENSE.md'
+    }
+
+    classifier = 'sources'
+}
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+
+    manifest commonManifest
+    classifier = 'deobf'
+}
+
+task apiJar(type: Jar) {
+    from(sourceSets.main.allJava) {
+        include "${config.mod}/api/**"
+    }
+    from (sourceSets.main.output) {
+        include 'LICENSE.md'
+        include "${config.mod}/api/**"
+    }
+
+    classifier = 'api'
+}
+
+artifacts {
+    archives sourcesJar
+    archives deobfJar
+	archives apiJar
+}
+

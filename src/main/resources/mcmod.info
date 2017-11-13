@@ -1,0 +1,18 @@
+[
+{
+  "modid": "barkbooks",
+  "name": "Bark Books",
+  "description": "A micro-mod that adds bark-covered books.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/oneandonlyflexo/barkbooks",
+  "updateUrl": "",
+  "authorList": ["oneandonlyflexo"],
+  "credits": "The Forge team of course. Team Roots for their roots assets.",
+  "logoFile": "assets/barkbooks/logo.png",
+  "screenshots": [],
+  "requiredMods": ["botania"],
+  "dependencies": ["required-after:botania;"],
+  "useDependencyInformation": true
+}
+]

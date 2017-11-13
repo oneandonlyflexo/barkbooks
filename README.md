@@ -27,5 +27,5 @@ Please do add this mod to your modpack! I only ask you let me know on Twitter:
 [@oneandonlyflexo](https://twitter.com/oneandonlyflexo). Hashtag optional
 
 ![](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)  
-Botaunomy is licensed under the [Creative Commons BY-SA-NC 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
-Copyright (C) 2017 Jeremy Grozavescu
+Bark Books is licensed under the [Creative Commons BY-SA-NC 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
+Copyright (C) 2017 Jeremy Grozavescu <oneandonlyflexo>
