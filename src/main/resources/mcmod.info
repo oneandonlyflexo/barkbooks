@@ -11,8 +11,8 @@
   "credits": "The Forge team of course. Team Roots for their roots assets.",
   "logoFile": "assets/barkbooks/logo.png",
   "screenshots": [],
-  "requiredMods": ["botania"],
-  "dependencies": ["required-after:botania;"],
+  "requiredMods": ["nibbler],
+  "dependencies": ["required-after:nibbler;"],
   "useDependencyInformation": true
 }
 ]

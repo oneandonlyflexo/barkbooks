@@ -7,47 +7,22 @@
  ******************************************************************************/
 package one.flexo.barkbooks;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import one.flexo.barkbooks.item.BarkItems;
-import one.flexo.barkbooks.item.KnifeItems;
+import one.flexo.barkbooks.item.KnifeItem;
 import one.flexo.barkbooks.item.enums.BarkItemsEnum;
-import one.flexo.barkbooks.item.enums.BarkKnifeEnum;
-import one.flexo.barkbooks.util.IModelRegister;
 
 
-@Mod.EventBusSubscriber
 @ObjectHolder("barkbooks")
 public class ModItems {
 
-	public static final BarkItems bark_items = null;
-	public static final KnifeItems bark_knives = null;
+	public static final BarkItems bark_items = new BarkItems(ModNames.bark_items, BarkItemsEnum.class);
+	public static final KnifeItem bark_knife_wood = new KnifeItem(ModNames.bark_knife_wood, ToolMaterial.WOOD);
+	public static final KnifeItem bark_knife_stone = new KnifeItem(ModNames.bark_knife_stone, ToolMaterial.WOOD);
+	public static final KnifeItem bark_knife_iron = new KnifeItem(ModNames.bark_knife_iron, ToolMaterial.IRON);
+	public static final KnifeItem bark_knife_gold = new KnifeItem(ModNames.bark_knife_gold, ToolMaterial.GOLD);
+	public static final KnifeItem bark_knife_diamond = new KnifeItem(ModNames.bark_knife_diamond, ToolMaterial.DIAMOND);
+	public static final KnifeItem bark_knife_obsidian = new KnifeItem(ModNames.bark_knife_obsidian, ModEnums.ToolMaterial.obsidian);
 
-
-
-	@SubscribeEvent
-	public static void registerItems(RegistryEvent.Register<Item> event) {
-		event.getRegistry().registerAll(
-				new BarkItems("bark_items", BarkItemsEnum.class),
-				new KnifeItems("bark_knives", BarkKnifeEnum.class));
-	}
-
-	@SideOnly(Side.CLIENT)
-	public static void initModels() {
-		for(Object block : Block.REGISTRY) {
-			if(block instanceof IModelRegister)
-				((IModelRegister) block).registerModels();
-		}
-
-		for(Object item : Item.REGISTRY) {
-			if(item instanceof IModelRegister)
-				((IModelRegister) item).registerModels();
-		}
-	}
 }

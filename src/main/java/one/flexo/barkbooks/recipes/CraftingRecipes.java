@@ -19,7 +19,7 @@ public class CraftingRecipes {
 	static {
 
 		recipeBarkItems = ModItems.bark_items.getRegistryName();
-		recipeBarkKnives = ModItems.bark_knives.getRegistryName();
+		recipeBarkKnives = ModItems.bark_knife_wood.getRegistryName();
 	}
 
 }
