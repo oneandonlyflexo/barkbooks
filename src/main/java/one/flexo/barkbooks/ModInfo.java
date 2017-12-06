@@ -19,7 +19,7 @@ public class ModInfo {
 	public static final String name = "Bark Books";
 
 	/**This gets replaced with a value from build.properties during the gradle build. */
-	public static final String version = /*${gradle.mod_version}*/ "0.1";
+	public static final String version = /*${gradle.mod_version}*/ "1.0";
 
 	public static final String description = "A micro-mod that adds bark-covered books.";
 

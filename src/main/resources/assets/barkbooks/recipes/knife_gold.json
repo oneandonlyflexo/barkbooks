@@ -1,0 +1,25 @@
+{
+	"result": {
+		"item": "barkbooks:knife_gold"
+	},
+	"pattern": [
+		"  X",
+		"BX ",
+		"SB "
+	],
+	"type": "forge:ore_shaped",
+	"key": {
+		"X": {
+			"type": "forge:ore_dict",
+			"ore": "ingotGold"
+		},
+		"B": {
+			"type": "forge:ore_dict",
+			"ore": "barkWood"
+		},
+		"S": {
+			"type": "forge:ore_dict",
+			"ore": "stickWood"
+		}
+	}
+}

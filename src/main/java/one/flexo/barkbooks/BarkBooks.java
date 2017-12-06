@@ -13,12 +13,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.*;
 import one.flexo.barkbooks.proxy.CommonProxy;
+import one.flexo.nibbler.registry.NibblerRegistry;
 
 /**
- * Bark Books! The oddly spelled, slightly quirky addon to Botania. This mod is my first foray into modding since waaay
- * back in the beta 1.5-1.7 days.  It's a wild ride and if you're reading this I hope you enjoy my code and don't
- * think too harshly of me.  I have an 18 month old atm and am sacrificing a bit of my already hectic sleep schedule
- * to work on this.
+ * Bark Books! My solution to not having to always add Tinker's just for their book recipe.
  *
  * @author "oneandonlyflexo"
  */
@@ -28,7 +26,7 @@ name = ModInfo.name,
 version = ModInfo.version,
 useMetadata = true,
 acceptedMinecraftVersions = "[1.12,1.12.2]",
-acceptableRemoteVersions = "[0.1]")
+acceptableRemoteVersions = "[1.0]")
 public class BarkBooks
 {
 
@@ -40,6 +38,8 @@ public class BarkBooks
 	public static BarkBooks instance;
 
 	public static Logger logger;
+
+	public static final NibblerRegistry registry = new NibblerRegistry();
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

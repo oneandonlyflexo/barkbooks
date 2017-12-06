@@ -7,17 +7,22 @@
  ******************************************************************************/
 package one.flexo.barkbooks;
 
+/**
+ * Collection of resource names, mostly item/block names
+ *
+ * @author "oneandonlyflexo"
+ */
 public class ModNames {
 
 	//Items
 
-	public static final String bark_items = "bark_items";
+	public static final String bark_items = "barkitem";
 
-	public static final String bark_knife_wood     = "bark_knife_wood";
-	public static final String bark_knife_stone    = "bark_knife_stone";
-	public static final String bark_knife_iron     = "bark_knife_iron";
-	public static final String bark_knife_gold     = "bark_knife_gold";
-	public static final String bark_knife_diamond  = "bark_knife_diamond";
-	public static final String bark_knife_obsidian = "bark_knife_obsidian";
+	public static final String knife_wood     = "knife_wood";
+	public static final String knife_stone    = "knife_stone";
+	public static final String knife_iron     = "knife_iron";
+	public static final String knife_gold     = "knife_gold";
+	public static final String knife_diamond  = "knife_diamond";
+	public static final String knife_obsidian = "knife_obsidian";
 
 }

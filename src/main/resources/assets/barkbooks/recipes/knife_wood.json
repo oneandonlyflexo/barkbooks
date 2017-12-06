@@ -1,0 +1,25 @@
+{
+	"result": {
+		"item": "barkbooks:knife_wood"
+	},
+	"pattern": [
+		"  X",
+		"BX ",
+		"SB "
+	],
+	"type": "forge:ore_shaped",
+	"key": {
+		"X": {
+			"type": "forge:ore_dict",
+			"ore": "plankWood"
+		},
+		"B": {
+			"type": "forge:ore_dict",
+			"ore": "barkWood"
+		},
+		"S": {
+			"type": "forge:ore_dict",
+			"ore": "stickWood"
+		}
+	}
+}

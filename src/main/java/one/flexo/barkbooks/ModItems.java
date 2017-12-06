@@ -7,22 +7,45 @@
  ******************************************************************************/
 package one.flexo.barkbooks;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item.ToolMaterial;
-import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
-import one.flexo.barkbooks.item.BarkItems;
 import one.flexo.barkbooks.item.KnifeItem;
+import one.flexo.barkbooks.item.base.EnumItemBase;
 import one.flexo.barkbooks.item.enums.BarkItemsEnum;
+import one.flexo.nibbler.item.tool.NibblerToolData;
 
-
-@ObjectHolder("barkbooks")
+/**
+ * The bread-and-butter of this mod.  All the barks! All the books! And some knives while we're at it...
+ *
+ * @author "oneandonlyflexo"
+ */
 public class ModItems {
 
-	public static final BarkItems bark_items = new BarkItems(ModNames.bark_items, BarkItemsEnum.class);
-	public static final KnifeItem bark_knife_wood = new KnifeItem(ModNames.bark_knife_wood, ToolMaterial.WOOD);
-	public static final KnifeItem bark_knife_stone = new KnifeItem(ModNames.bark_knife_stone, ToolMaterial.WOOD);
-	public static final KnifeItem bark_knife_iron = new KnifeItem(ModNames.bark_knife_iron, ToolMaterial.IRON);
-	public static final KnifeItem bark_knife_gold = new KnifeItem(ModNames.bark_knife_gold, ToolMaterial.GOLD);
-	public static final KnifeItem bark_knife_diamond = new KnifeItem(ModNames.bark_knife_diamond, ToolMaterial.DIAMOND);
-	public static final KnifeItem bark_knife_obsidian = new KnifeItem(ModNames.bark_knife_obsidian, ModEnums.ToolMaterial.obsidian);
+	//Simple Items
+
+	public static final EnumItemBase<?> bark_items = new EnumItemBase<>(ModNames.bark_items, BarkItemsEnum.class);
+
+
+	//Knives
+
+	private static NibblerToolData woodKnifeData     = new NibblerToolData(1.5f, -1.5f).add(Blocks.LOG, Blocks.LOG2);
+	private static NibblerToolData stoneKnifeData    = woodKnifeData.as(ToolMaterial.STONE);
+	private static NibblerToolData ironKnifeData     = woodKnifeData.as(ToolMaterial.IRON);
+	private static NibblerToolData goldKnifeData     = woodKnifeData.as(ToolMaterial.GOLD);
+	private static NibblerToolData diamondKnifeData  = woodKnifeData.as(ToolMaterial.DIAMOND);
+	private static NibblerToolData obsidianKnifeData = woodKnifeData.as(ModEnums.ToolMaterial.obsidian);
+
+
+	public static final KnifeItem knife_wood     = new KnifeItem(ModNames.knife_wood,     woodKnifeData);
+	public static final KnifeItem knife_stone    = new KnifeItem(ModNames.knife_stone,    stoneKnifeData);
+	public static final KnifeItem knife_iron     = new KnifeItem(ModNames.knife_iron,     ironKnifeData);
+	public static final KnifeItem knife_gold     = new KnifeItem(ModNames.knife_gold,     goldKnifeData);
+	public static final KnifeItem knife_diamond  = new KnifeItem(ModNames.knife_diamond,  diamondKnifeData);
+	public static final KnifeItem knife_obsidian = new KnifeItem(ModNames.knife_obsidian, obsidianKnifeData);
+
+
+	public static void init() {
+
+	}
 
 }

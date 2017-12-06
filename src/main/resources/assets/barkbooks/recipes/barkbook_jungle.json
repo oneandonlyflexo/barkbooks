@@ -1,0 +1,31 @@
+{
+  "result": {
+		"item": "barkbooks:barkitem",
+    	"data": 15
+	},
+  "ingredients": [
+	{
+		"item": "#BARKCOVERJUNGLE"
+	},
+    {
+		"type": "forge:ore_dict",
+		"ore": "string"
+	},
+	{
+		"type": "forge:ore_dict",
+		"ore": "paper"
+	},
+	{
+		"type": "forge:ore_dict",
+		"ore": "paper"
+	},
+	{
+		"type": "forge:ore_dict",
+		"ore": "paper"
+	},
+    {
+		"item": "#BARKCOVERJUNGLE"
+	}
+  ],
+  "type": "forge:ore_shapeless"
+}

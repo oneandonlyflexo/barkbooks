@@ -9,12 +9,16 @@ package one.flexo.barkbooks.proxy;
 
 import java.io.File;
 
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.*;
-import one.flexo.barkbooks.ModDimensions;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import one.flexo.barkbooks.*;
 import one.flexo.barkbooks.config.Config;
+import one.flexo.barkbooks.recipes.OreDictRegistry;
 
 @Mod.EventBusSubscriber
 public abstract class CommonProxy {
@@ -30,7 +34,8 @@ public abstract class CommonProxy {
 		config = new Configuration(new File(directory.getPath(), "modtut.cfg"));
 		Config.readConfig();
 
-		ModDimensions.init();
+		ModBlocks.init();
+		ModItems.init();
 	}
 
 	/**
@@ -50,13 +55,15 @@ public abstract class CommonProxy {
 
 	}
 
-	// helper to determine whether the given player is in creative mode
-	//  not necessary for most examples
-	abstract public boolean playerIsInCreativeMode(EntityPlayer player);
+	@SubscribeEvent
+	public static void registerBlocks(RegistryEvent.Register<Block> event) {
+		BarkBooks.registry.registerBlocks(event);
+	}
 
-	/**
-	 * is this a dedicated server?
-	 * @return true if this is a dedicated server, false otherwise
-	 */
-	abstract public boolean isDedicatedServer();
+	@SubscribeEvent
+	public static void registerItems(RegistryEvent.Register<Item> event) {
+		BarkBooks.registry.registerItems(event);
+
+		OreDictRegistry.init();
+	}
 }

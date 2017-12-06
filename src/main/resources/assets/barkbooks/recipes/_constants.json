@@ -1,0 +1,128 @@
+[
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 0
+		},
+		"name": "BARKOAK"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 1
+		},
+		"name": "BARKBIRCH"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 2
+		},
+		"name": "BARKSPRUCE"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 3
+		},
+		"name": "BARKJUNGLE"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 4
+		},
+		"name": "BARKACACIA"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 5
+		},
+		"name": "BARKDARKOAK"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 6
+		},
+		"name": "BARKCOVEROAK"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 7
+		},
+		"name": "BARKCOVERBIRCH"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 8
+		},
+		"name": "BARKCOVERSPRUCE"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 9
+		},
+		"name": "BARKCOVERJUNGLE"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 10
+		},
+		"name": "BARKCOVERACACIA"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 11
+		},
+		"name": "BARKCOVERDARKOAK"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 12
+		},
+		"name": "BARKBOOKOAK"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 13
+		},
+		"name": "BARKBOOKBIRCH"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 14
+		},
+		"name": "BARKBOOKSPRUCE"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 15
+		},
+		"name": "BARKBOOKJUNGLE"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 16
+		},
+		"name": "BARKBOOKACACIA"
+	},
+	{
+		"ingredient": {
+			"item": "barkbooks:barkitem",
+			"data": 17
+		},
+		"name": "BARKBOOKDARKOAK"
+	}
+ ]

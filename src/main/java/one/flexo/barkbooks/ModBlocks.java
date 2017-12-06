@@ -15,4 +15,8 @@ public class ModBlocks {
 
 	//Put blocks here! probably some bookcases
 
+	public static void init() {
+
+	}
+
 }
