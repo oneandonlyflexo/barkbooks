@@ -42,23 +42,25 @@ public class BarkBooks
 
 	public static Logger logger;
 
-	public static final NibblerRegistry registry = new NibblerRegistry();
+	public static NibblerRegistry registry;
 
-	public static CreativeTabs creativeTab = new CreativeTabs("barkbooks") {
-		@Override
-		public String getTabLabel() {
-			return "barkbooks";
-		}
-		@Override
-		public ItemStack getTabIconItem() {
-			return new ItemStack(ModItems.bark_items, 1, BarkItemsEnum.book_oak.meta());
-		}
-	};
+	public static CreativeTabs creativeTab;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		logger = event.getModLog();
 		proxy.preInit(event);
+		registry = new NibblerRegistry();
+		creativeTab = new CreativeTabs("barkbooks") {
+			@Override
+			public String getTabLabel() {
+				return "barkbooks";
+			}
+			@Override
+			public ItemStack getTabIconItem() {
+				return new ItemStack(ModItems.bark_items, 1, BarkItemsEnum.book_oak.meta());
+			}
+		};
 	}
 
 	@Mod.EventHandler
