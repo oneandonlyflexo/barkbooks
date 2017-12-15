@@ -27,7 +27,6 @@ public abstract class CommonProxy {
 
 	/**
 	 * Run before anything else. Read your config, create blocks, items, etc, and register them with the GameRegistry
-	 * @param event
 	 */
 	public void preInit(FMLPreInitializationEvent e) {
 		File directory = e.getModConfigurationDirectory();
@@ -41,7 +40,6 @@ public abstract class CommonProxy {
 	/**
 	 * Do your mod setup. Build whatever data structures you care about. Register recipes,
 	 * send FMLInterModComms messages to other mods.
-	 * @param e
 	 */
 	public void init(FMLInitializationEvent e) {
 
@@ -49,7 +47,6 @@ public abstract class CommonProxy {
 
 	/**
 	 * Handle interaction with other mods, complete your setup based on this.
-	 * @param e
 	 */
 	public void postInit(FMLPostInitializationEvent e) {
 
@@ -57,12 +54,12 @@ public abstract class CommonProxy {
 
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
-		BarkBooks.registry.registerBlocks(event);
+		ModRegistry.instance.registerBlocks(event);
 	}
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event) {
-		BarkBooks.registry.registerItems(event);
+		ModRegistry.instance.registerItems(event);
 
 		OreDictRegistry.init();
 	}

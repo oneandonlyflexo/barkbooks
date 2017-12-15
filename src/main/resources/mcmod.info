@@ -12,7 +12,7 @@
   "logoFile": "assets/barkbooks/logo.png",
   "screenshots": [],
   "requiredMods": ["nibbler"],
-  "dependencies": ["required-after:nibbler;"],
+  "dependencies": ["nibbler"],
   "useDependencyInformation": true
 }
 ]

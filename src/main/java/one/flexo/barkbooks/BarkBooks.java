@@ -9,12 +9,9 @@ package one.flexo.barkbooks;
 
 import org.apache.logging.log4j.Logger;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.*;
-import one.flexo.barkbooks.item.enums.BarkItemsEnum;
 import one.flexo.barkbooks.proxy.CommonProxy;
 import one.flexo.nibbler.registry.NibblerRegistry;
 
@@ -28,39 +25,26 @@ import one.flexo.nibbler.registry.NibblerRegistry;
 name = ModInfo.name,
 version = ModInfo.version,
 useMetadata = true,
+dependencies = "nibbler",
 acceptedMinecraftVersions = "[1.12,1.12.2]",
 acceptableRemoteVersions = "[1.2]")
 public class BarkBooks
 {
 
-	//Says where the client and server 'proxy' code is loaded.
-	@SidedProxy(clientSide="one.flexo.barkbooks.proxy.ClientProxy", serverSide="one.flexo.barkbooks.proxy.ServerProxy")
-	public static CommonProxy proxy;
-
 	@Mod.Instance
 	public static BarkBooks instance;
 
 	public static Logger logger;
+	//Says where the client and server 'proxy' code is loaded.
+	@SidedProxy(clientSide="one.flexo.barkbooks.proxy.ClientProxy", serverSide="one.flexo.barkbooks.proxy.ServerProxy")
+	public static CommonProxy proxy;
 
-	public static NibblerRegistry registry;
-
-	public static CreativeTabs creativeTab;
+	public static final NibblerRegistry registry = new NibblerRegistry();
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		logger = event.getModLog();
 		proxy.preInit(event);
-		registry = new NibblerRegistry();
-		creativeTab = new CreativeTabs("barkbooks") {
-			@Override
-			public String getTabLabel() {
-				return "barkbooks";
-			}
-			@Override
-			public ItemStack getTabIconItem() {
-				return new ItemStack(ModItems.bark_items, 1, BarkItemsEnum.book_oak.meta());
-			}
-		};
 	}
 
 	@Mod.EventHandler
