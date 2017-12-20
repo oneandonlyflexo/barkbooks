@@ -54,7 +54,7 @@ minecraft {
 dependencies {
 
     compile files(
-		'../Nibbler/build/libs/nibbler-1.12.2-0.2.jar'
+		'../Nibbler/build/libs/nibbler-1.12.2-0.3.jar'
     )
 
 }

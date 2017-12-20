@@ -13,7 +13,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.*;
 import one.flexo.barkbooks.proxy.CommonProxy;
-import one.flexo.nibbler.registry.NibblerRegistry;
 
 /**
  * Bark Books! My solution to not having to always add Tinker's just for their book recipe.
@@ -34,12 +33,11 @@ public class BarkBooks
 	@Mod.Instance
 	public static BarkBooks instance;
 
-	public static Logger logger;
 	//Says where the client and server 'proxy' code is loaded.
 	@SidedProxy(clientSide="one.flexo.barkbooks.proxy.ClientProxy", serverSide="one.flexo.barkbooks.proxy.ServerProxy")
 	public static CommonProxy proxy;
 
-	public static final NibblerRegistry registry = new NibblerRegistry();
+	public static Logger logger;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

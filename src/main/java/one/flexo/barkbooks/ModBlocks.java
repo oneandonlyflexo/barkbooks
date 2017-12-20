@@ -7,10 +7,6 @@
  ******************************************************************************/
 package one.flexo.barkbooks;
 
-import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
-
-
-@ObjectHolder("barkbooks")
 public class ModBlocks {
 
 	//Put blocks here! probably some bookcases
